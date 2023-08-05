@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  .homepage {
+    flex: 1;
+    margin-right: 1rem;
+  }
+  .sidebar {
+    flex: 0 0 300px;
+  }
+}
+
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .card {
+    flex: 0 0 48%;
+    margin-bottom: 1rem;
+  }
+}
