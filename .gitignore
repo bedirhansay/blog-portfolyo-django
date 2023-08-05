@@ -1,30 +1,10 @@
-# Django stuff
-*.log
-*.pot
-*.pyc
-__pycache__/
-local_settings.py
-
-# Database
+.DS_Store
+__pycache__
+.vscode 
 db.sqlite3
-
-# Static files
-static/
-media/
-
-# Secret key
-secret_key.txt
-
-# Configuration files
-settings.py
-
-# IDE specific
-.vscode/
-*.sublime-project
-*.sublime-workspace
-*.pyc
-*.swp
-
-# Dependency directories
-venv/
-env/
+yazi_resimleri
+media
+node_modules
+yarn.lock
+yarn-error.log
+dist
