@@ -8,3 +8,7 @@ node_modules
 yarn.lock
 yarn-error.log
 dist
+blog/static
+static
+Pipfile
+Pipfile.lock
