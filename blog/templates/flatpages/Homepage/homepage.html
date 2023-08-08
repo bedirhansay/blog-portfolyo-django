@@ -1,66 +1,22 @@
-{% extends "base/base.html" %} 
-{% load static %}
-{% block title %}Ana Sayfa{% endblock %} 
-{% block content %}
+{% extends "base/base.html" %} {% load static %} {% block title %}Ana
+Sayfa{%endblock %} {% block content %}
 
-<div>
-  <div class="homepage">
-    {% for post in posts %}
-    <div class="card"">
-      <img src="{{ post.image.url }}" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{post.title}}</h5>
-          <p class="card-text">
-          {{post.content|safe|truncatechars_html:100}}
+<div class="homepage-wrapper">
+  <div>{% include 'components/hero.html' %}</div>
 
-          </p>
-            <p class="card-text">
-            <small class="text-muted">
-              {{ post.update_date|timesince }} Önce Paylaşıldı</small
-            >
-          </p>
-          <p>
-            {{post.author}}
-          </p>
-          <a href="#" class="btn btn-primary">Okumaya Devam et</a>
-        </div>
-    </div>
-    {% empty %}
-    <p>Henüz hiçbir yazı bulunmamaktadır.</p>
-      {% endfor%}
+  <p class="category-title">Frameworks</p>
+
+  <div>
+    {% include 'components/frameworks.html' %}
   </div>
-   <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end pagination-showcase">
-      {% if posts.has_previous %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{posts.previous_page_number}}"
-          >Previous</a
-        >
-      </li>
-      {% else %}
-      <li class="page-item">
-        <a class="page-link">Previous</a>
-      </li>
-      {% endif %}
-      <strong class=" m-auto"
-        >Page {{ posts.number }}</strong
-      >
-      {% if posts.has_next %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{posts.next_page_number}}">Next</a>
-      </li>
-      {% else %}
-      <li class="page-item">
-        <a class="page-link">Next</a>
-      </li>
-      {% endif %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{posts.paginator.num_pages}}"
-          >Last Pages</a
-        >
-      </li>
-    </ul>
-  </nav>
+
+  <p class="category-title">BLOG YAZILARI</p>
+
+  <div class="homepage">
+    {% include 'components/card.html' %}
+  </div>
+
+  {% include 'components/pagination.html' %}
 </div>
 
 {% endblock %}

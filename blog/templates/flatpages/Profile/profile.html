@@ -1,22 +1,64 @@
-{% extends "base/base.html" %}
- {% block title %}Ana Sayfa{% endblock %} 
-{% block content %}
-<h1 class="far2">Menü</h1>
-<ul>
-  <li>
-    <a href="/profile/{{ user.username }}/posts">Profil Düzenle</a>
-  </li>
-  <li>
-    <a href="/profile/{{ user.username }}/posts">Şifre Değiştir</a>
-  </li>
-  <li>
-    <a href="/profile/{{ user.username }}/posts">Yazı Ekle</a>
-  </li>
-  <li>
-    <a href="/profile/{{ user.username }}/posts">Çıkış yap</a>
-  </li>
-  <li>
-    <a href="/profile/{{ user.username }}/posts">Posts</a>
-  </li>
-</ul>
+{% extends "base/base.html" %} {% load static %} {% block title %}Ana
+Sayfa{%endblock %} {% block content %}
+<div class="">
+  <div class="add-btn">
+    <strong>Yazı Ekle</strong>
+    <a href="">
+      <img src="{% static 'svg/add.svg' %}" alt="Ekle" width="20" height="20" />
+    </a>
+  </div>
+  <table class="table-post">
+    <tr>
+      <th>No</th>
+      <th>Resim</th>
+      <th>Başlık</th>
+      <th>İçerik</th>
+      <th>Yayın Tarihi</th>
+      <th>İşlemler</th>
+    </tr>
+    {% for post in posts|dictsort:"publish_date" %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>
+        <img
+          src="{{ post.image.url }}"
+          alt="{{ post.title }}"
+          width="70"
+          height="70"
+        />
+      </td>
+      <td style="text-align: center">{{ post.title|title }}</td>
+      <td>{{ post.content|safe|truncatewords:10 }}</td>
+      <td>{{ post.publish_date }}</td>
+      <td>
+        <a href="">
+          <img
+            src="{% static 'svg/delete.svg' %}"
+            alt="Sil"
+            width="20"
+            height="20"
+          />
+        </a>
+        <a href="">
+          <img
+            src="{% static 'svg/see.svg' %}"
+            alt="Sil"
+            width="20"
+            height="20"
+          />
+        </a>
+        <a href="">
+          <img
+            src="{% static 'svg/edit.svg' %}"
+            alt="Sil"
+            width="20"
+            height="20"
+          />
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div class="pag">{% include 'components/pagination.html'%}</div>
+</div>
 {% endblock %}

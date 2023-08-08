@@ -1,0 +1,52 @@
+{% extends "base/base.html" %} {% load static %} {% block title %} Single Page
+{% endblock %} {% block content %}
+
+<div class="hero-wrapper">
+  <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+  <div class="abs">
+    <h2>{{ post.title | title }}</h2>
+    <span></span>
+    <p>
+      Published on {{ post.publish_date|date:"F j, Y" }} by {{ post.author }}
+    </p>
+  </div>
+</div>
+
+<div class="sub-post">
+  <div class="single-post">
+    <div class="post-header">
+      <h1 class="post-title">{{ post.title|title }}</h1>
+      <div>
+        <p class="post-meta">Share</p>
+        <img class="linkedin" src="{% static 'svg/linkedin.svg' %}" alt="" />
+        <img class="twitter" src="{% static 'svg/twitter.svg' %}" alt="" />
+        <img class="instagram" src="{% static 'svg/instagram.svg' %}" alt="" />
+      </div>
+    </div>
+
+    <div class="post-image">
+      <img src="{{ post.image.url }}" alt="{{ post.title }}" />
+    </div>
+    <div class="post-content">{{ post.content|safe }}</div>
+  </div>
+
+  <div class="recommend">
+    <h2>Recommended</h2>
+    {% for p in posts %}
+    <a href="{% url 'single-post' slug=p.slug %}" class="recommend-wrapper">
+      <div class="recommend-post">
+        {% if p.image %}
+        <img src="{{ p.image.url }}" alt="{{ p.title }}" />
+        {% endif %}
+      </div>
+      <div class="recommend-text">
+        <strong>{{ p.title|title }}</strong>
+        <p>{{ p.content|safe|truncatechars:100 }}</p>
+        <p>{{ post.publish_date|date:"F j, Y" }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

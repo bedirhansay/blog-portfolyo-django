@@ -1,7 +1,7 @@
 {% load static %} {% load getCategories %}
 
-<nav class="navbar-wrapper">
-  <ul class="social-wrapper">
+<nav class="navbar">
+  <ul class="navbar-social-wrapper">
     <li class="class-item">
       <a href="/category/{{ category.slug }}" class="category">
         <img src="{% static 'svg/linkedin.svg' %}" alt="" />
@@ -12,11 +12,6 @@
         <img src="{% static 'svg/mail.svg' %}" alt="" />
       </a>
     </li>
-    <li class="">
-      <a href="/category/{{ category.slug }}" class="category">
-        <img src="{% static 'svg/github.svg' %}" alt="" />
-      </a>
-    </li>
   </ul>
   <ul>
     <li>
@@ -24,7 +19,7 @@
     </li>
   </ul>
 
-  <ul class="social-wrapper">
+  <ul class="navbar-social-wrapper">
     <li class="menu active">
       <img src="{% static 'svg/menu.svg' %}" alt="" />
       <ul class="navbar-sub">
@@ -43,8 +38,8 @@
     <li class="profile">
       <img src="{% static 'svg/profile.svg' %}" alt="" />
       <ul class="dropdown">
-        <li><a href="/profile">Profile</a></li>
         {% if request.user.is_authenticated %}
+        <li><a href="/profile">Profile</a></li>
         <li>
           <a href="/profile/{{ user.username }}/posts">Profil Düzenle</a>
         </li>
@@ -52,11 +47,10 @@
           <a href="/profile/{{ user.username }}/posts">Şifre Değiştir</a>
         </li>
         <li>
-          <a href="/profile/{{ user.username }}/posts">Yazı Ekle</a>
-        </li>
-        <li>
           <a href="/profile/{{ user.username }}/posts">Çıkış yap</a>
         </li>
+        {% else %}
+        <li><a href="/login">Giriş yap</a></li>
         {% endif %}
       </ul>
     </li>

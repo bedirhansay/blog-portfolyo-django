@@ -1,5 +1,12 @@
-from django.http import HttpResponse
-from django.shortcuts import render
 
+from django.shortcuts import render
+from blog.models import PostModel
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def profile(request):
-    return render (request, 'flatpages/profile/profile.html')
+    user = request.user
+    post = PostModel.objects.filter(author=user).order_by('-publish_date')
+
+
+    return render (request, 'flatpages/profile/profile.html', {'posts':post})

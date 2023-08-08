@@ -36,7 +36,7 @@ export default class Component {
   }
 
   startTextLoop() {
-    const textArray = ["Python", "Javascript", "React", "Next.js"];
+    const textArray = ["Python", "Javascript", "React JS", "Next JS", "Django"];
     let currentIndex = 0;
 
     setInterval(() => {

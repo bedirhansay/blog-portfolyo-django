@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import homepage, profile, category, mypost
+from .views import homepage, profile, category, mypost, singlePost
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -8,6 +8,7 @@ urlpatterns = [
     path('profile/', profile, name='profile'),
     path('posts/',mypost, name='mypost'),
     path('category/<slug:slug>',category, name='category'),
+    path('single-post/<slug:slug>',singlePost, name='single-post'),
 ]
 
 if settings.DEBUG:

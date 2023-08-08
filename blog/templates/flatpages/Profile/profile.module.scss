@@ -1,15 +1,17 @@
-.red{
-    color: red;
+.table-post {
+  width: var(--width);
+  margin: 2rem auto;
 }
 
-.haloo{
-    color: blue;
+.pag {
+  width: var(--width);
+  margin: 2rem auto;
 }
-
-.far{
-    color: green;
-}
-
-.far2{
-    @apply flex bg-red-500
+.add-btn {
+  width: var(--width);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 1rem auto;
+  padding-right: 20px;
 }

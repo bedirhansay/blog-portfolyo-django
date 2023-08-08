@@ -24,6 +24,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog',
     'ckeditor',
+    'macros',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -104,7 +106,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'Media/'
