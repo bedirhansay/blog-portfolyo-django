@@ -11,7 +11,7 @@ class PostModel(DateAbstract):
     author = models.ForeignKey(User,related_name='posts', on_delete=models.CASCADE)
     content = RichTextField()
     categories = models.ManyToManyField(CategoryModel, related_name='post')
-    image = models.ImageField(upload_to='blog/media/post_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

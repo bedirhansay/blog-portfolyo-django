@@ -1,0 +1,118 @@
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+
+  .logo {
+    width: 30px;
+    height: auto;
+  }
+
+  .input-wrapper {
+    border: 1px solid #333;
+    padding: 0px 10px;
+    border-radius: 5px;
+    input {
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      outline: none;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.social-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  li {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.profile {
+  .dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute !important;
+    width: 200px;
+    background: white;
+    color: #000;
+    top: 30px;
+    right: 0px;
+    z-index: 10;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -2px 2px 20px -3px rgba(235, 235, 235, 1);
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    li {
+      transition: all 0.3s ease-in-out;
+      a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transition: all 0.3s ease-in-out;
+          scale: 1.1;
+        }
+      }
+    }
+  }
+}
+
+.navbar-sub {
+  display: none;
+  flex-direction: column;
+  position: absolute !important;
+  width: 200px;
+  background: white;
+  color: #000;
+  top: 30px;
+  right: 0px;
+  z-index: 10;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: -2px 2px 20px -3px rgba(235, 235, 235, 1);
+}
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  li {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        scale: 1.1;
+      }
+    }
+  }
+}
+
+.active {
+  display: flex !important;
+}

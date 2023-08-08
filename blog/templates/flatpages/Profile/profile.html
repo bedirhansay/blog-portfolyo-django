@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+ {% block title %}Ana Sayfa{% endblock %} 
+{% block content %}
+<h1 class="far2">Menü</h1>
+<ul>
+  <li>
+    <a href="/profile/{{ user.username }}/posts">Profil Düzenle</a>
+  </li>
+  <li>
+    <a href="/profile/{{ user.username }}/posts">Şifre Değiştir</a>
+  </li>
+  <li>
+    <a href="/profile/{{ user.username }}/posts">Yazı Ekle</a>
+  </li>
+  <li>
+    <a href="/profile/{{ user.username }}/posts">Çıkış yap</a>
+  </li>
+  <li>
+    <a href="/profile/{{ user.username }}/posts">Posts</a>
+  </li>
+</ul>
+{% endblock %}

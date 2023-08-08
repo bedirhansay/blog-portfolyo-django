@@ -1,0 +1,64 @@
+{% load static %} {% load getCategories %}
+
+<nav class="navbar-wrapper">
+  <ul class="social-wrapper">
+    <li class="class-item">
+      <a href="/category/{{ category.slug }}" class="category">
+        <img src="{% static 'svg/linkedin.svg' %}" alt="" />
+      </a>
+    </li>
+    <li class="">
+      <a href="/category/{{ category.slug }}" class="category">
+        <img src="{% static 'svg/mail.svg' %}" alt="" />
+      </a>
+    </li>
+    <li class="">
+      <a href="/category/{{ category.slug }}" class="category">
+        <img src="{% static 'svg/github.svg' %}" alt="" />
+      </a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a class="mid-text" href="/"> FRONTEND </a>
+    </li>
+  </ul>
+
+  <ul class="social-wrapper">
+    <li class="menu active">
+      <img src="{% static 'svg/menu.svg' %}" alt="" />
+      <ul class="navbar-sub">
+        {% get_categories as categories %} {% for category in categories %}
+        <li>
+          <a href="/category/{{ category.slug }}" class="category">
+            {{ category.name|title }}
+          </a>
+        </li>
+
+        {% endfor %}
+        <li><a href="/admin">admin</a></li>
+      </ul>
+    </li>
+
+    <li class="profile">
+      <img src="{% static 'svg/profile.svg' %}" alt="" />
+      <ul class="dropdown">
+        <li><a href="/profile">Profile</a></li>
+        {% if request.user.is_authenticated %}
+        <li>
+          <a href="/profile/{{ user.username }}/posts">Profil Düzenle</a>
+        </li>
+        <li>
+          <a href="/profile/{{ user.username }}/posts">Şifre Değiştir</a>
+        </li>
+        <li>
+          <a href="/profile/{{ user.username }}/posts">Yazı Ekle</a>
+        </li>
+        <li>
+          <a href="/profile/{{ user.username }}/posts">Çıkış yap</a>
+        </li>
+        {% endif %}
+      </ul>
+    </li>
+  </ul>
+</nav>

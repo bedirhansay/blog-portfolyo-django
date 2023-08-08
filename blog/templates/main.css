@@ -1,5 +1,19 @@
 @import "./flatpages/Homepage/homepage.module.scss";
-@import "./flatpages/contact/contact.module.scss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./flatpages/Profile/profile.module.scss";
+@import "base/base.module.scss";
+@import "components/components.module.scss";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+a,
+li,
+ul {
+  text-decoration: none !important;
+  list-style: none !important;
+}

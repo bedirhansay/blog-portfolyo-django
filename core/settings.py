@@ -40,7 +40,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    ]
 
 ROOT_URLCONF = 'core.urls'
 
@@ -108,7 +108,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'Media/'
-STATICFILES_DIRS = [BASE_DIR / 'blog/static']
-
+STATICFILES_DIRS = [BASE_DIR / 'blog/templates/static']
+STATICFILES_DIRS = [BASE_DIR / 'blog/templates/build']
 MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
