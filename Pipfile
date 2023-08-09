@@ -8,6 +8,8 @@ django = "*"
 django-autoslug = "*"
 django-ckeditor = "*"
 django-livereload = "*"
+django-crispy-forms = "*"
+crispy-bootstrap4 = "*"
 
 [dev-packages]
 

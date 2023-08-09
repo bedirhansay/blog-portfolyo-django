@@ -24,14 +24,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog',
     'ckeditor',
-    'macros',
-    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +106,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'Media/'
@@ -114,3 +114,6 @@ STATICFILES_DIRS = [BASE_DIR / 'blog/templates/static']
 STATICFILES_DIRS = [BASE_DIR / 'blog/templates/build']
 MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'anasayfa'

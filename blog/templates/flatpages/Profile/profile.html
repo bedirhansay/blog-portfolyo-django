@@ -3,7 +3,7 @@ Sayfa{%endblock %} {% block content %}
 <div class="">
   <div class="add-btn">
     <strong>Yazı Ekle</strong>
-    <a href="">
+    <a href="{% url 'add-post' %}">
       <img src="{% static 'svg/add.svg' %}" alt="Ekle" width="20" height="20" />
     </a>
   </div>
@@ -31,7 +31,7 @@ Sayfa{%endblock %} {% block content %}
       <td>{{ post.content|safe|truncatewords:10 }}</td>
       <td>{{ post.publish_date }}</td>
       <td>
-        <a href="">
+        <a href="{% url 'delete-post' slug=post.slug %}">
           <img
             src="{% static 'svg/delete.svg' %}"
             alt="Sil"
@@ -39,7 +39,7 @@ Sayfa{%endblock %} {% block content %}
             height="20"
           />
         </a>
-        <a href="">
+        <a href="{% url 'single-post' slug=post.slug %}">
           <img
             src="{% static 'svg/see.svg' %}"
             alt="Sil"
@@ -47,7 +47,7 @@ Sayfa{%endblock %} {% block content %}
             height="20"
           />
         </a>
-        <a href="">
+        <a href="{% url 'update-post' slug=post.slug %}">
           <img
             src="{% static 'svg/edit.svg' %}"
             alt="Sil"

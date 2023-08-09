@@ -1,0 +1,12 @@
+{% extends "base/base.html" %} {% load crispy_forms_tags %} {%block title %}Yazı
+Ekle{%endblock %} {% block content %}
+
+<div class="wrapper">
+  <form class="form-area" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ post.title }}?</p>
+    <input type="submit" class="submit-button" value="Evet" />
+  </form>
+</div>
+
+{% endblock %}

@@ -26,7 +26,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    text-shadow: #007bff;
+    backdrop-filter: blur(2px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,7 +82,6 @@
     img {
       aspect-ratio: 16/7;
       object-fit: cover;
-      max-height: 200px;
     }
   }
 }

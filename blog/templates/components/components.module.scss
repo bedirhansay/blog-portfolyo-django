@@ -364,3 +364,47 @@
     color: #fff;
   }
 }
+
+// ! MESSAGES
+ul.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    &.success {
+      background-color: #dff0d8; /* Success background color */
+      border-color: #d0e9c6; /* Success border color */
+    }
+
+    &.error {
+      background-color: #f2dede; /* Error background color */
+      border-color: #ebccd1; /* Error border color */
+    }
+
+    &.info {
+      background-color: #d9edf7; /* Info background color */
+      border-color: #bce8f1; /* Info border color */
+    }
+
+    &.warning {
+      background-color: #fcf8e3; /* Warning background color */
+      border-color: #faebcc; /* Warning border color */
+    }
+
+    &:first-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

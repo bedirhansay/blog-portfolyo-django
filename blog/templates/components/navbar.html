@@ -3,12 +3,16 @@
 <nav class="navbar">
   <ul class="navbar-social-wrapper">
     <li class="class-item">
-      <a href="/category/{{ category.slug }}" class="category">
+      <a
+        target="_blank"
+        href="https://www.linkedin.com/in/bedirhan-say-2b47391b0/"
+        class="category"
+      >
         <img src="{% static 'svg/linkedin.svg' %}" alt="" />
       </a>
     </li>
     <li class="">
-      <a href="/category/{{ category.slug }}" class="category">
+      <a class="category" href="mailto:bedirhan.sayy@outlook.com">
         <img src="{% static 'svg/mail.svg' %}" alt="" />
       </a>
     </li>
@@ -44,10 +48,10 @@
           <a href="/profile/{{ user.username }}/posts">Profil Düzenle</a>
         </li>
         <li>
-          <a href="/profile/{{ user.username }}/posts">Şifre Değiştir</a>
+          <a href="{% url 'change-password' %}">Şifre Değiştir</a>
         </li>
         <li>
-          <a href="/profile/{{ user.username }}/posts">Çıkış yap</a>
+          <a href="{% url 'signout' %}">Çıkış yap</a>
         </li>
         {% else %}
         <li><a href="/login">Giriş yap</a></li>

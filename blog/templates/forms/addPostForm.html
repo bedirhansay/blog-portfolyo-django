@@ -1,0 +1,12 @@
+{% extends "base/base.html" %} {% load crispy_forms_tags %} {%block title %}Yazı
+Ekle{%endblock %} {% block content %}
+
+<div class="wrapper">
+  {% include '../components/messages.html' %}
+  <form class="form-area" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.media }} {{ form|crispy }}
+    <input type="submit" class="submit-button" value="Gönder" />
+  </form>
+</div>
+
+{% endblock %}
