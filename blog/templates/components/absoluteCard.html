@@ -1,0 +1,12 @@
+{% load static %}
+<d class="abs-card-wrapper">
+  {% for trend in trends %}
+  <a href="{% url 'single-post' slug=trend.slug %}" class="abs-sub">
+    <img src="{{ trend.image.url }}" alt="{{ post.title }}" />
+    <div class="abs-text">
+      <h2>{{ trend.title | title }}</h2>
+      <span></span>
+    </div>
+  </a>
+  {% endfor %}
+</d>

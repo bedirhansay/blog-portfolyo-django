@@ -171,6 +171,12 @@
   .card-body {
     padding: 15px;
 
+    .view {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
     .card-title {
       font-size: 1.25rem;
       margin-bottom: 10px;
@@ -179,6 +185,9 @@
     .card-text {
       font-size: 0.75rem;
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       small {
         font-size: 0.75rem;
         color: #999;
@@ -244,6 +253,67 @@
   }
 }
 
+// !ABSOLUTE CARD
+
+.abs-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  position: relative;
+  .abs-sub {
+    cursor: pointer;
+    aspect-ratio: 16/9;
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 12px;
+    color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: translate(0, -5px);
+      transition: all 0.3s ease-in-out;
+    }
+    img {
+      width: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      max-height: 400px !important;
+    }
+    .abs-text {
+      position: absolute;
+      inset: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      gap: 20px;
+
+      span {
+        width: 100px;
+        height: 3px;
+        background-color: #fff;
+      }
+      h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
 // ! HERO WRAPPER
 .hero-wrapper {
   width: 100%;
@@ -293,11 +363,49 @@
       height: 5px;
       background-color: #fff;
     }
+    /* Genel stil ayarları */
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 10px;
+      max-width: 400px;
+      box-shadow: var(--box-shadow);
+    }
+
+    /* Arama kutusu stil ayarları */
+    .input-wrapper input[type="search"] {
+      padding: 8px;
+      font-size: 14px;
+      width: 100%;
+      background: none;
+      outline: none;
+      border: none;
+      background-color: #fff;
+    }
+
+    /* Arama düğmesi stil ayarları */
+    .input-wrapper button[type="submit"] {
+      padding: 8px 12px;
+      background-color: #232340;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Arama düğmesi üzerine gelindiğinde stil değişikliği */
+    .input-wrapper button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
   }
   @media screen and (max-width: 768px) {
     aspect-ratio: 16/9;
     .abs {
-      gap: 0px;
+      gap: 10px !important;
       h2 {
         font-size: 1.5rem !important;
       }
@@ -305,46 +413,9 @@
         font-size: 0.65rem;
         padding: 20px;
       }
-    }
-  }
-}
-
-// ! PROJECTS
-.projeler {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  gap: 20px;
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    .projeler-text {
-      gap: 10px;
-    }
-  }
-
-  img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .projeler-text {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-
-    span {
-      width: 160px;
-      height: 5px;
-      background-color: #232340;
-    }
-    h2 {
-      text-transform: uppercase;
+      .input-wrapper {
+        max-width: 250px;
+      }
     }
   }
 }

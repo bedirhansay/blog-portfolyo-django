@@ -13,9 +13,14 @@ class PostModel(DateAbstract):
     categories = models.ManyToManyField(CategoryModel, related_name='post')
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
+    view_count = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return  self.title
+    
+    def increase_view_count(self):
+        self.view_count += 1
+        self.save()
     
     class Meta:
         verbose_name= 'Post'

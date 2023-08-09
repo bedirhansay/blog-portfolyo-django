@@ -13,7 +13,7 @@
   --width: clamp(315px, 90%, 1279px);
   --border-radius: 8px;
   --font-family: "Urbanist", sans-serif;
-  --main-color: rgb(35, 35, 64)
+  --main-color: #232340
   --second-color:35,35,64;
   --main-color-varient1: rgb(var(--main-color), 0.2);
   --main-color-varient2: rgb(var(--main-color), 0.5);

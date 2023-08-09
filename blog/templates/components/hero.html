@@ -1,18 +1,12 @@
 {% load static %}
-
 <div class="hero-wrapper">
   <img src="{% static 'images/background.png' %}" alt="" />
   <div class="abs">
     <h2>Change a Life Today</h2>
     <span></span>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-      voluptatibus, quibusdam, quia, quos voluptatem voluptatum exercitationem
-      quod voluptate quas quidem doloribus.
-    </p>
-    <div class="buttons">
-      <a href="#" class="btn-primary">Donate</a>
-      <a href="" class="btn-primary">Volunter</a>
-    </div>
+    <form class="input-wrapper">
+      <input type="search" placeholder="Ara" name="filter" />
+      <button type="submit">Ara</button>
+    </form>
   </div>
 </div>

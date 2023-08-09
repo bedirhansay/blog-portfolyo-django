@@ -1,20 +1,25 @@
+{% load static %}
+{% for post in posts %}
 
-    {% for post in posts %}
-      
-    <a href="{% url 'single-post' slug=post.slug %}" class="card"">
-      <img src="{{ post.image.url }}" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{post.title |title}}</h5>
-          <p class="card-text">
-          {{post.content|safe|truncatechars_html:90}}
-          </p>
-            <p class="card-text">
-            <small class="text-muted">
-              {{ post.update_date|timesince }} Önce Paylaşıldı</small
-            >
-          </p>
-        </div>
-      </a>
-    {% empty %}
-    <p>Henüz hiçbir yazı bulunmamaktadır.</p>
-      {% endfor%}
+<a href="{% url 'single-post' slug=post.slug %}" class="card"">
+      <img src=" {{ post.image.url }}" class="card-img-top" alt="..." />
+<div class="card-body">
+  <h5 class="card-title">{{post.title |title}}</h5>
+  <p class="card-text">
+    {{post.content|safe|truncatechars_html:90}}
+  </p>
+  <div class="card-text">
+    <small class="text-muted">
+      {{ post.publish_date|timesince }} Önce Paylaşıldı
+    </small>
+
+    <div class="view">
+      <img src="{% static 'svg/see.svg' %}" alt="Sil" width="20" height="20" />
+      <small>{{post.view_count}}</small>
+    </div>
+  </div>
+</div>
+</a>
+{% empty %}
+<p>Henüz hiçbir yazı bulunmamaktadır.</p>
+{% endfor%}

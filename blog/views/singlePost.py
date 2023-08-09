@@ -5,6 +5,10 @@ from blog.forms import AddCommentForm
 
 def singlePost(request,slug):
     yazi = get_object_or_404(PostModel,slug=slug)
+    if request.method == 'GET':
+        yazi = get_object_or_404(PostModel,slug=slug)
+        yazi.view_count += 1
+        yazi.save()
     post = PostModel.objects.all().order_by('-publish_date')
     form = AddCommentForm()
     if form.is_valid():
