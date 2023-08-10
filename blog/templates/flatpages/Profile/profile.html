@@ -17,20 +17,20 @@ Sayfa{%endblock %} {% block content %}
       <th>İşlemler</th>
     </tr>
     {% for post in posts|dictsort:"publish_date" %}
-    <tr>
+    <tr class="post">
       <td>{{ forloop.counter }}</td>
       <td>
         <img
           src="{{ post.image.url }}"
           alt="{{ post.title }}"
-          width="70"
-          height="70"
+          width="50"
+          height="50"
         />
       </td>
       <td style="text-align: center">{{ post.title|title }}</td>
       <td>{{ post.content|safe|truncatewords:10 }}</td>
       <td>{{ post.publish_date }}</td>
-      <td>
+      <td class="actions">
         <a href="{% url 'delete-post' slug=post.slug %}">
           <img
             src="{% static 'svg/delete.svg' %}"

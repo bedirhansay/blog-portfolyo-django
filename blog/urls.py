@@ -13,7 +13,6 @@ urlpatterns = [
     path('add-post/',addPost, name='add-post'),
     path('logout/',signout, name='signout'),
     path('login/',auth_views.LoginView.as_view(
-        success_url='/profile/',
         template_name='auth/login.html',), name='login'),
     path('change-password/',changePassword, name='change-password'),
     path('update-post/<slug:slug>',updatePost, name='update-post'),

@@ -45,7 +45,7 @@
         {% if request.user.is_authenticated %}
         <li><a href="/profile">Profile</a></li>
         <li>
-          <a href="/profile/{{ user.username }}/posts">Profil Düzenle</a>
+          <a href="/profile">Yazılarım</a>
         </li>
         <li>
           <a href="{% url 'change-password' %}">Şifre Değiştir</a>

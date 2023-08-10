@@ -2,21 +2,19 @@
 Sayfa{%endblock %} {% block content %}
 
 <div class="homepage-wrapper">
-  <div>{% include 'components/hero.html' %}</div>
+  {% include 'components/hero.html' %}
 
-  <p class="category-title">En Çok Okunanlar</p>
+  <h2 class="category-title">En Çok Okunanlar</h2>
+  {% include 'components/absoluteCard.html' %}
 
-  <div>
-    {% include 'components/absoluteCard.html' %}
-  </div>
-
-  <p class="category-title">BLOG YAZILARI</p>
-
-  <div class="homepage">
-    {% include 'components/card.html' %}
-  </div>
+  <h2 class="category-title">BLOG YAZILARI</h2>
+  <div class="homepage">{% include 'components/card.html' %}</div>
 
   {% include 'components/pagination.html' %}
+  <h3 class="category-title"></h3>
+  <h3 class="category-title">Fikrinizi Paylaşın</h3>
+
+  {% include 'forms/contactForm.html' %}
 </div>
 
 {% endblock %}

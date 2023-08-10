@@ -8,13 +8,13 @@
     </li>
     {% else %}
     <li class="page-item">
-      <a class="page-link">Previous</a>
+      <a class="page-link">Önceki</a>
     </li>
     {% endif %}
-    <strong class="m-auto">Page {{ posts.number }}</strong>
+    <strong class="m-auto">Sayfa {{ posts.number }}</strong>
     {% if posts.has_next %}
     <li class="page-item">
-      <a class="page-link" href="?page={{posts.next_page_number}}">Next</a>
+      <a class="page-link" href="?page={{posts.next_page_number}}">Sonraki</a>
     </li>
     {% else %}
     <li class="page-item">
@@ -23,7 +23,7 @@
     {% endif %}
     <li class="page-item">
       <a class="page-link" href="?page={{posts.paginator.num_pages}}"
-        >Last Pages</a
+        >Son Sayfa</a
       >
     </li>
   </ul>

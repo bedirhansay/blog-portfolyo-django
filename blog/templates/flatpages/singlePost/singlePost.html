@@ -28,6 +28,16 @@
       <img src="{{ post.image.url }}" alt="{{ post.title }}" />
     </div>
     <div class="post-content">{{ post.content|safe }}</div>
+    {% if request.user.is_authenticated %}
+    <div class="post-actions">
+      <a href="{% url 'update-post' slug=post.slug %}" class="update">
+        <img src="{% static 'svg/edit.svg' %}" alt="" />
+      </a>
+      <a href="{% url 'delete-post' slug=post.slug %}" class="delete">
+        <img src="{% static 'svg/delete.svg' %}" alt="" />
+      </a>
+    </div>
+    {% endif %}
   </div>
 
   <div class="recommend">

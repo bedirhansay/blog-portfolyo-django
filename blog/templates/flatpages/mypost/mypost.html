@@ -1,8 +1,64 @@
 {% extends "base/base.html" %} {% load static %} {% block title %}Ana
 Sayfa{%endblock %} {% block content %}
-<div>
-  <h1>My Post</h1>
-  {{posts}}
-  <p>My post content</p>
+<div class="">
+  <div class="add-btn">
+    <strong>Yazı Ekle</strong>
+    <a href="{% url 'add-post' %}">
+      <img src="{% static 'svg/add.svg' %}" alt="Ekle" width="20" height="20" />
+    </a>
+  </div>
+  <table class="table-post">
+    <tr>
+      <th>No</th>
+      <th>Resim</th>
+      <th>Başlık</th>
+      <th>İçerik</th>
+      <th>Yayın Tarihi</th>
+      <th>İşlemler</th>
+    </tr>
+    {% for post in posts|dictsort:"publish_date" %}
+    <tr class="post">
+      <td>{{ forloop.counter }}</td>
+      <td>
+        <img
+          src="{{ post.image.url }}"
+          alt="{{ post.title }}"
+          width="50"
+          height="50"
+        />
+      </td>
+      <td style="text-align: center">{{ post.title|title }}</td>
+      <td>{{ post.content|safe|truncatewords:10 }}</td>
+      <td>{{ post.publish_date }}</td>
+      <td class="actions">
+        <a href="{% url 'delete-post' slug=post.slug %}">
+          <img
+            src="{% static 'svg/delete.svg' %}"
+            alt="Sil"
+            width="20"
+            height="20"
+          />
+        </a>
+        <a href="{% url 'single-post' slug=post.slug %}">
+          <img
+            src="{% static 'svg/see.svg' %}"
+            alt="Sil"
+            width="20"
+            height="20"
+          />
+        </a>
+        <a href="{% url 'update-post' slug=post.slug %}">
+          <img
+            src="{% static 'svg/edit.svg' %}"
+            alt="Sil"
+            width="20"
+            height="20"
+          />
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div class="pag">{% include 'components/pagination.html'%}</div>
 </div>
 {% endblock %}

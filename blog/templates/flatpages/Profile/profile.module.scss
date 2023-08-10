@@ -13,5 +13,36 @@
   gap: 10px;
   justify-content: flex-end;
   margin: 1rem auto;
-  padding-right: 20px;
+}
+
+.actions {
+  white-space: nowrap;
+  text-align: center;
+}
+
+.post {
+  box-shadow: var(--box-shadow);
+  padding: 10px !important;
+}
+
+/* Örnek CSS kodu */
+.table-post {
+  border-collapse: collapse;
+  margin-top: 20px; /* Top boşluk */
+}
+
+.table-post th,
+.table-post td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-post th {
+  background-color: #f2f2f2;
+}
+
+.post img {
+  display: block;
+  margin: auto;
 }

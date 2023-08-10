@@ -1,28 +1,20 @@
 .homepage-wrapper {
   width: var(--width);
-  margin: 2rem auto;
+  margin: 0px auto;
   gap: 20px;
 
   .homepage {
     display: grid;
     gap: 1rem;
-    margin-top: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
-
   .category-title {
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1.5rem !important;
-    padding-bottom: 10px;
-    &::after {
-      content: "";
-      width: 160px;
-      height: 5px;
-      background-color: #232340;
-      display: block;
-      margin-top: 10px;
-    }
+    margin-top: 1.5rem !important ;
+    text-decoration: underline;
+    display: inline-block;
   }
 }

@@ -117,13 +117,22 @@
 
 .post-content {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.1;
+}
+.post-content img {
+  height: auto !important;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.post-content p {
+  margin: 10px auto !important;
+  font-size: 14px;
 }
 
 .recommend {
   background-color: #f9f9f9;
   padding: 20px;
-  background-color: #f9f9f9;
   border: 1px solid #ddd;
   display: flex;
   flex-direction: column;

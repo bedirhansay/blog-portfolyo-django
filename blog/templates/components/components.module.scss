@@ -21,7 +21,6 @@
     align-items: center;
     gap: 10px;
     position: relative;
-    min-width: 70px !important;
     li {
       display: flex;
       align-items: center;
@@ -150,7 +149,7 @@
 
 // !CARD STYLES
 .card {
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--box-shadow);
   transition: all 0.3s ease-in-out;
@@ -221,7 +220,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 20px;
+  margin: 2rem auto;
   border: var(--border);
   padding: 20px;
 
@@ -293,14 +292,16 @@
       background-color: rgba(0, 0, 0, 0.5);
       gap: 20px;
 
-      span {
-        width: 100px;
-        height: 3px;
-        background-color: #fff;
+      strong {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -20%);
       }
       h2 {
         position: absolute;
         top: 50%;
+        white-space: nowrap;
         left: 50%;
         transform: translate(-50%, -50%);
       }
@@ -316,10 +317,10 @@
 
 // ! HERO WRAPPER
 .hero-wrapper {
+  margin-top: 2rem;
   width: 100%;
   aspect-ratio: 16/7;
   position: relative;
-  margin-bottom: 2rem;
   text-align: center;
   padding: 20px;
   color: #fff;

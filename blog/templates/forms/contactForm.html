@@ -1,0 +1,11 @@
+<div class="contact-form">
+  <form
+    class="contact-form-area"
+    action=""
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %} {{ form.media }} {{ contact }}
+    <input type="submit" class="submit-button" value="Gönder" />
+  </form>
+</div>

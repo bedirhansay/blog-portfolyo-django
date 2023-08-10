@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="{% static 'logo_favicon.ico' %}"
+      href="{% static 'svg/logo.svg' %}"
       type="image/x-icon"
     />
     <title>{% block title %}Blog{% endblock %}</title>
@@ -16,6 +16,10 @@
     />
 
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link
+      href="ckeditor/plugins/codesnippet/lib/highlight/styles/default.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <main class="base-container">
